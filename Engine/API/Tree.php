@@ -32,7 +32,7 @@ class Tree
         {
             $manager = new Manager();
 
-//            $manager = Modules::collect($manager);
+            $manager = Modules::collect($manager);
 
             self::$instance = new self($manager);
         }
