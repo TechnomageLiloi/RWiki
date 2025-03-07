@@ -65,8 +65,10 @@ class Application extends ConceptualApplication
             }
         }
 
-        return $this->render(__DIR__ . '/Layout.tpl', [
+        $admin = Security::check();
 
+        return $this->render(__DIR__ . '/Layout.tpl', [
+            'admin' => $admin
         ]);
     }
 

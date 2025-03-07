@@ -111,11 +111,15 @@ abstract class Method
     /**
      * Check access. If admin access is denied, {@link AccessException} would be rose.
      *
-     * @deprecated Will remove this method after removing it from all API methods.
      * @throws AccessException
      */
     public static function accessCheck(): void
     {
-        return;
+        if(self::accessGet())
+        {
+            return;
+        }
+
+        throw new AccessException();
     }
 }

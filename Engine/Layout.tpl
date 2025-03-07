@@ -16,6 +16,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Security/Password/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Wiki/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/News/API/Requests.js"></script>
 
@@ -23,7 +24,14 @@
     </head>
     <body>
         <div id="head">
-            <a href="javascript:void(0)" onclick="Rune.News.Topics.show();" class="butn">Topics</a>
+            <?php if($admin): ?>
+                <a href="/" class="butn">Map</a>
+                <a href="javascript:void(0)" onclick="Rune.News.Topics.show();" class="butn">Topics</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
+            <?php else: ?>
+                <a href="/" class="butn">Map</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>
+            <?php endif; ?>
         </div>
 
         <div id="page" class="stylo">
