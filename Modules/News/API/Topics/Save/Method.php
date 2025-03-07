@@ -14,6 +14,7 @@ class Method extends SuperMethod
 
         $entity = TopicsManager::load(self::getParameter('key_topic'));
 
+        $entity->setUrl(self::getParameter('url'));
         $entity->setTitle(self::getParameter('title'));
         $entity->setSummary(self::getParameter('summary'));
         $entity->setTags(self::getParameter('tags'));

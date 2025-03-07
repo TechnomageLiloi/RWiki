@@ -20,6 +20,7 @@ create table rwiki_config
 create table rwiki_topics
 (
     key_topic bigint unsigned auto_increment,
+    url varchar(250) default '/' not null,
     title varchar(100) not null,
     status tinyint unsigned default 1 not null,
     summary text not null,

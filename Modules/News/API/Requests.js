@@ -43,6 +43,7 @@ Rune.News = {
 
             API.request('Rune.Topics.Save', {
                 key_topic: keyTopic,
+                url: jq_block.find('[name=url]').val(),
                 title: jq_block.find('[name=title]').val(),
                 summary: jq_block.find('[name=summary]').val(),
                 tags: jq_block.find('[name=tags]').val(),

@@ -4,6 +4,8 @@
     <a href="javascript:void(0)" onclick="Rune.News.Topics.save('<?php echo $entity->getKey(); ?>');">Save</a>
     <hr/>
     <table>
+        <tr><td>URL</td><td><input type="text" name="url" value="<?php echo $entity->getUrl(); ?>"></td></tr>
+
         <tr><td>Title</td><td><input type="text" name="title" value="<?php echo $entity->getTitle(); ?>"></td></tr>
 
         <tr><td>Summary</td><td><textarea name="summary"><?php echo $entity->getSummary(); ?></textarea></td></tr>

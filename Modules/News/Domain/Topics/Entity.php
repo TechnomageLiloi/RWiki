@@ -25,6 +25,9 @@ use Liloi\Stylo\Parser;
  *
  * @method string getData()
  * @method void setData(string $value)
+ *
+ * @method string getUrl()
+ * @method void setUrl(string $value)
  */
 class Entity extends AbstractEntity
 {
@@ -45,7 +48,7 @@ class Entity extends AbstractEntity
 
     public function getLink(): string
     {
-        return '-';
+        return $this->getUrl();
     }
 
     public function getStatusTitle(): string
