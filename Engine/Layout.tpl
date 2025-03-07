@@ -16,6 +16,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Wiki/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/News/API/Requests.js"></script>
 
         <title>rWiki</title>
@@ -26,7 +27,9 @@
         </div>
 
         <div id="page" class="stylo">
-
+            <script>
+                Rune.Wiki.show();
+            </script>
         </div>
     </body>
 </html>

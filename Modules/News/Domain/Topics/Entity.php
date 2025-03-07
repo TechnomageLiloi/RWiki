@@ -4,7 +4,6 @@ namespace Liloi\Rune\Modules\News\Domain\Topics;
 
 use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;
-use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
 
 /**
  * Question's entity.
@@ -46,7 +45,7 @@ class Entity extends AbstractEntity
 
     public function getLink(): string
     {
-        return AtomsManager::ATOMtoURL($this->getKeyAtom());
+        return '-';
     }
 
     public function getStatusTitle(): string
