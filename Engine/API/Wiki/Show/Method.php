@@ -7,6 +7,7 @@ use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Security;
 use Liloi\Rune\Modules\News\Domain\Topics\Manager as TopicsManager;
 use Liloi\Rune\Exceptions\NotImplementedException;
+use Liloi\Rune\Domain\Wiki\Manager as WikiManager;
 
 class Method extends SuperMethod
 {
@@ -24,6 +25,8 @@ class Method extends SuperMethod
             ]));
             return $response;
         }
+
+        $wiki = WikiManager::load($URL);
 
         throw new NotImplementedException();
     }
