@@ -6,7 +6,6 @@ use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Security;
 use Liloi\Rune\Modules\News\Domain\Topics\Manager as TopicsManager;
-use Liloi\Rune\Exceptions\NotImplementedException;
 use Liloi\Rune\Domain\Wiki\Manager as WikiManager;
 
 class Method extends SuperMethod
@@ -15,19 +14,23 @@ class Method extends SuperMethod
     {
         $URL = $_SERVER['REQUEST_URI'];
 
+        $response = new Response();
+
         if($URL === '/')
         {
             $topics = TopicsManager::loadCollection();
-
-            $response = new Response();
             $response->set('render', static::render(__DIR__ . '/News.tpl', [
                 'topics' => $topics
             ]));
-            return $response;
+        }
+        else
+        {
+            $wiki = WikiManager::load($URL);
+            $response->set('render', static::render(__DIR__ . '/Templates/Stylo.tpl', [
+                'wiki' => $wiki
+            ]));
         }
 
-        $wiki = WikiManager::load($URL);
-
-        throw new NotImplementedException();
+        return $response;
     }
 }

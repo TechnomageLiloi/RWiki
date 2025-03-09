@@ -15,7 +15,7 @@ class Manager
 
         return Entity::create([
             'link' => $link,
-            'path' => ROOT_DIR . $link
+            'path' => ROOT_DIR . '/Root' . $link
         ]);
     }
 

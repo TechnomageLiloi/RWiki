@@ -13,5 +13,8 @@ use Liloi\Stylo\Parser;
  */
 class Entity extends AbstractEntity
 {
-
+    public function getStyloParse(string $fil = 'Index.md'): string
+    {
+        return Parser::parseString(file_get_contents($this->getPath() . '/' . $fil));
+    }
 }
